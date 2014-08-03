@@ -11,6 +11,15 @@ import com.googlecode.objectify.annotation.Id;
 public class Comment {
 	@Id Long id;
 	
+	public Comment(){}
+	
+	
+	public Comment(Key<User> createdBy, String commentText) {
+		super();
+		this.createdBy = createdBy;
+		this.commentText = commentText;
+		this.creationDate = new Date();
+	}
 	Key<User> createdBy;
 	
 	Date creationDate;
