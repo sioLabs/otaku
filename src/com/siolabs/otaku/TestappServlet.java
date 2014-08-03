@@ -1,4 +1,4 @@
-package com.siolabs.testApp;
+package com.siolabs.otaku;
 import org.restlet.Application;
 import org.restlet.Restlet;
 import org.restlet.routing.Router;
