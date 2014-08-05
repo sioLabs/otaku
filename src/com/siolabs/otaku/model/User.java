@@ -1,5 +1,6 @@
 package com.siolabs.otaku.model;
 
+import java.util.Date;
 import java.util.Set;
 
 import com.googlecode.objectify.Key;
@@ -15,7 +16,10 @@ public class User {
 	@Index String email;
 	String password;
 	String name;	
-	String profiePic;
+	String profilePic;
+	Date dob;
+	String country;
+	String city;
 	int reputationPoints;
 	
 	//the tasks create by the user
@@ -32,6 +36,10 @@ public class User {
 		this.name = name;
 		this.password = password;
 		this.reputationPoints = 1;
+		this.country = "";
+		this.city = "Delhi";
+		this.dob = new Date();
+			
 		
 	}
 
@@ -77,12 +85,12 @@ public class User {
 
 
 	public String getProfiePic() {
-		return profiePic;
+		return this.profilePic;
 	}
 
 
 	public void setProfiePic(String profiePic) {
-		this.profiePic = profiePic;
+		this.profilePic = profiePic;
 	}
 
 
@@ -98,6 +106,36 @@ public class User {
 
 	public Set<Key<Task>> getTasks() {
 		return tasks;
+	}
+
+
+	public Date getDob() {
+		return dob;
+	}
+
+
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+
+
+	public String getCountry() {
+		return country;
+	}
+
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+
+	public String getCity() {
+		return city;
+	}
+
+
+	public void setCity(String city) {
+		this.city = city;
 	}
 
 

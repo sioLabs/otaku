@@ -2,6 +2,7 @@ package com.siolabs.otaku;
 
 import static com.siolabs.otaku.model.OfyService.ofy;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import org.json.JSONException;
@@ -46,7 +47,7 @@ public class UserJsonResource  extends ServerResource{
 
 			 jsReply.object();
 
-			jsReply.key("STATUS").value("SUCCESS");
+			jsReply.key("STATUS").value("SUCCESS 2");
 
 			 jsReply.key("User").value(userKey.toString());
 			 jsReply.endObject();
@@ -90,7 +91,12 @@ public class UserJsonResource  extends ServerResource{
 				JSONObject obj = new JSONObject();
 				obj.put("name", u.getName());
 				obj.put("id", u.getId());
-				obj.put("repo", u.getReputationPoints());
+				obj.put("reputation", u.getReputationPoints());
+				obj.put("country", u.getCountry());
+				obj.put("city", u.getCity());
+				
+				//String dob = 
+				obj.put("dob", new SimpleDateFormat("dd-MM-yyyy").format(u.getDob()));			
 				userArray.value(obj);		
 			
 		}

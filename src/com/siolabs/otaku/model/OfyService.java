@@ -8,6 +8,7 @@ import com.googlecode.objectify.*;
 public class OfyService {
     static {
         factory().register(User.class);
+        factory().register(Task.class);
                
     }
 

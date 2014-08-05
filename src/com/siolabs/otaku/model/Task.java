@@ -6,6 +6,7 @@ import java.util.Set;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 
 
 @Entity
@@ -22,8 +23,8 @@ public class Task {
 		this.createdBy = createdBy;
 		this.comments = null;
 		this.creationDate=new Date();
-		this.upvotes = 0;
-		this.downvotes = 0;
+		this.upvotes = 1;
+	
 	}
 	
 	//unique id
@@ -32,13 +33,15 @@ public class Task {
 	
 	String title;
 	String description;
+	@Index
 	Key<User> createdBy;
 	Date creationDate;
+	
 	
 	Set<Key<Comment>> comments;
 	
 	int upvotes;
-	int downvotes;
+	
 	
 	/*
 	 * getters and setter
@@ -85,12 +88,7 @@ public class Task {
 	public void setUpvotes(int upvotes) {
 		this.upvotes = upvotes;
 	}
-	public int getDownvotes() {
-		return downvotes;
-	}
-	public void setDownvotes(int downvotes) {
-		this.downvotes = downvotes;
-	}
+
 	
 	
 	

@@ -15,6 +15,7 @@ public class TestappServlet extends Application {
 		System.out.print("Reached router");
 		Router router = new Router(getContext());
 		router.attach("/user", UserJsonResource.class);
+		router.attach("/task", TaskJsonResource.class);
 		router.attachDefault(TestJsonResource.class);
 		
 		return router;
